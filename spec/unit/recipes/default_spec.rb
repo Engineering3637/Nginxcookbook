@@ -20,7 +20,6 @@ describe 'nginx::default' do
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
     end
-  end
 
   ####### updating all sources in ubuntu ##########
   it 'runs apt-get update' do
@@ -53,6 +52,6 @@ describe 'nginx::default' do
   # delete default config file in site-enable so that we can replace our proxy.config
   it 'should delete the symbolic from default config in site-enable' do
       expect(chef_run).to delete_link('/etc/nginx/sites-enabled/default')
-    end
-
+  end
+  end
 end
